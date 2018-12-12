@@ -1,0 +1,418 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package meson
+dpkg-buildpackage: info: source version 0.49.0-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Richard Yang <richard@yenforyang.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with python3 --buildsystem=pybuild
+   dh_auto_clean -O--buildsystem=pybuild
+I: pybuild base:217: python3.7 setup.py clean 
+running clean
+removing '/dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build' (and everything under it)
+'build/bdist.linux-amd64' does not exist -- can't clean it
+'build/scripts-3.7' does not exist -- can't clean it
+   dh_autoreconf_clean -O--buildsystem=pybuild
+   debian/rules override_dh_clean
+make[1]: Entering directory '/dev/shm/all/meson/meson-0.49.0'
+dh_clean
+rm -f meson-test-run.txt meson-test-run.xml
+rm -rf __pycache__
+rm -rf mesonbuild/__pycache__
+rm -rf mesonbuild/*/__pycache__
+make[1]: Leaving directory '/dev/shm/all/meson/meson-0.49.0'
+FAKEROOTKEY=1634288671 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build --with python3 --buildsystem=pybuild
+   dh_update_autotools_config -O--buildsystem=pybuild
+   dh_autoreconf -O--buildsystem=pybuild
+   dh_auto_configure -O--buildsystem=pybuild
+I: pybuild base:217: python3.7 setup.py config 
+running config
+   dh_auto_build -O--buildsystem=pybuild
+I: pybuild base:217: /usr/bin/python3 setup.py build 
+running build
+running build_py
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/rewriter.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/optinterpreter.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mtest.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/msubprojects.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/msetup.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mparser.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mlog.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mintro.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/minstall.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/minit.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mesonmain.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mesonlib.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/mconf.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/linkers.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/interpreterbase.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/interpreter.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/environment.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/coredata.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/build.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/astinterpreter.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+copying mesonbuild/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/xcodebackend.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/vs2017backend.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/vs2015backend.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/vs2010backend.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/ninjabackend.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/backends.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+copying mesonbuild/backend/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/vala.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/swift.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/rust.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/objcpp.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/objc.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/java.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/fortran.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/d.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/cs.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/cpp.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/compilers.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/c_function_attributes.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/c.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+copying mesonbuild/compilers/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/ui.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/platform.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/misc.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/dev.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/boost.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/base.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+copying mesonbuild/dependencies/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/windows.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/unstable_simd.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/unstable_icestorm.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/rpm.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/qt5.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/qt4.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/qt.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/python3.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/python.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/pkgconfig.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/modtest.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/i18n.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/hotdoc.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/gnome.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/dlang.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+copying mesonbuild/modules/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/yelphelper.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/vcstagger.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/uninstall.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/symbolextractor.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/scanbuild.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/regen_checker.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/msgfmthelper.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/meson_exe.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/hotdochelper.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/gtkdochelper.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/gettext.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/dist.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/dirchanger.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/depfixer.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/delwithsuffix.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/coverage.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/commandrunner.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/cleantrees.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+copying mesonbuild/scripts/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap
+copying mesonbuild/wrap/wraptool.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap
+copying mesonbuild/wrap/wrap.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap
+copying mesonbuild/wrap/__init__.py -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap
+creating /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/data
+copying mesonbuild/dependencies/data/CMakeLists.txt -> /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/data
+   dh_auto_test -O--buildsystem=pybuild
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary --with python3 --buildsystem=pybuild
+   dh_testroot -O--buildsystem=pybuild
+   dh_prep -O--buildsystem=pybuild
+   dh_installdirs -O--buildsystem=pybuild
+   dh_auto_install -O--buildsystem=pybuild
+I: pybuild base:217: /usr/bin/python3 setup.py install --root /dev/shm/all/meson/meson-0.49.0/debian/meson 
+running install
+running build
+running build_py
+running install_lib
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap/wrap.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/wrap/wraptool.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/cleantrees.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/commandrunner.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/coverage.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/delwithsuffix.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/depfixer.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/dirchanger.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/dist.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/gettext.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/gtkdochelper.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/hotdochelper.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/meson_exe.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/msgfmthelper.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/regen_checker.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/scanbuild.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/symbolextractor.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/uninstall.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/vcstagger.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/scripts/yelphelper.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/dlang.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/gnome.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/hotdoc.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/i18n.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/modtest.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/pkgconfig.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/python.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/python3.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/qt.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/qt4.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/qt5.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/rpm.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/unstable_icestorm.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/unstable_simd.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/modules/windows.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/data
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/data/CMakeLists.txt -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/data
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/base.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/boost.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/dev.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/misc.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/platform.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/dependencies/ui.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/c.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/c_function_attributes.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/compilers.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/cpp.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/cs.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/d.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/fortran.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/java.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/objc.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/objcpp.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/rust.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/swift.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/compilers/vala.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/backends.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/ninjabackend.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/vs2010backend.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/vs2015backend.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/vs2017backend.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/backend/xcodebackend.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/__init__.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/astinterpreter.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/build.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/coredata.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/environment.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/interpreter.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/interpreterbase.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/linkers.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mconf.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mesonlib.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mesonmain.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/minit.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/minstall.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mintro.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mlog.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mparser.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/msetup.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/msubprojects.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/mtest.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/optinterpreter.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+copying /dev/shm/all/meson/meson-0.49.0/.pybuild/cpython3_3.7_meson/build/mesonbuild/rewriter.py -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap/wrap.py to wrap.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/wrap/wraptool.py to wraptool.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/cleantrees.py to cleantrees.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/commandrunner.py to commandrunner.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/coverage.py to coverage.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/delwithsuffix.py to delwithsuffix.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/depfixer.py to depfixer.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/dirchanger.py to dirchanger.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/dist.py to dist.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/gettext.py to gettext.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/gtkdochelper.py to gtkdochelper.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/hotdochelper.py to hotdochelper.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/meson_exe.py to meson_exe.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/msgfmthelper.py to msgfmthelper.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/regen_checker.py to regen_checker.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/scanbuild.py to scanbuild.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/symbolextractor.py to symbolextractor.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/uninstall.py to uninstall.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/vcstagger.py to vcstagger.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/scripts/yelphelper.py to yelphelper.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/dlang.py to dlang.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/gnome.py to gnome.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/hotdoc.py to hotdoc.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/i18n.py to i18n.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/modtest.py to modtest.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/pkgconfig.py to pkgconfig.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/python.py to python.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/python3.py to python3.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/qt.py to qt.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/qt4.py to qt4.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/qt5.py to qt5.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/rpm.py to rpm.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/unstable_icestorm.py to unstable_icestorm.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/unstable_simd.py to unstable_simd.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/modules/windows.py to windows.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/base.py to base.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/boost.py to boost.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/dev.py to dev.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/misc.py to misc.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/platform.py to platform.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/dependencies/ui.py to ui.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/c.py to c.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/c_function_attributes.py to c_function_attributes.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/compilers.py to compilers.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/cpp.py to cpp.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/cs.py to cs.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/d.py to d.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/fortran.py to fortran.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/java.py to java.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/objc.py to objc.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/objcpp.py to objcpp.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/rust.py to rust.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/swift.py to swift.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/compilers/vala.py to vala.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/backends.py to backends.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/ninjabackend.py to ninjabackend.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/vs2010backend.py to vs2010backend.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/vs2015backend.py to vs2015backend.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/vs2017backend.py to vs2017backend.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/backend/xcodebackend.py to xcodebackend.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/astinterpreter.py to astinterpreter.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/build.py to build.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/coredata.py to coredata.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/environment.py to environment.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/interpreter.py to interpreter.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/interpreterbase.py to interpreterbase.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/linkers.py to linkers.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mconf.py to mconf.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mesonlib.py to mesonlib.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mesonmain.py to mesonmain.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/minit.py to minit.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/minstall.py to minstall.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mintro.py to mintro.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mlog.py to mlog.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mparser.py to mparser.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/msetup.py to msetup.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/msubprojects.py to msubprojects.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/mtest.py to mtest.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/optinterpreter.py to optinterpreter.cpython-37.pyc
+byte-compiling /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/mesonbuild/rewriter.py to rewriter.cpython-37.pyc
+running install_data
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share/man
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share/man/man1
+copying man/meson.1 -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share/man/man1
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share/polkit-1
+creating /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share/polkit-1/actions
+copying data/com.mesonbuild.install.policy -> /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/share/polkit-1/actions
+running install_egg_info
+running egg_info
+writing meson.egg-info/PKG-INFO
+writing dependency_links to meson.egg-info/dependency_links.txt
+writing entry points to meson.egg-info/entry_points.txt
+writing top-level names to meson.egg-info/top_level.txt
+reading manifest file 'meson.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no directories found matching 'syntax-highlighting'
+warning: no files found matching 'authors.txt'
+warning: no files found matching 'contributing.txt'
+warning: no files found matching 'mesonrewriter.py'
+writing manifest file 'meson.egg-info/SOURCES.txt'
+Copying meson.egg-info to /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/lib/python3.7/dist-packages/meson-0.49.0.egg-info
+Skipping SOURCES.txt
+running install_scripts
+Installing meson script to /dev/shm/all/meson/meson-0.49.0/debian/meson/usr/bin
+   debian/rules override_dh_install
+make[1]: Entering directory '/dev/shm/all/meson/meson-0.49.0'
+dh_install
+mkdir -p $(pwd)/debian/meson/usr/share/meson
+cp debian/debcrossgen $(pwd)/debian/meson/usr/share/meson
+rm -rf $(pwd)/debian/meson/usr/lib/python*/dist-packages/mesonbuild/__pycache__
+rm -rf $(pwd)/debian/meson/usr/lib/python*/dist-packages/mesonbuild/*/__pycache__
+mv $(pwd)/debian/meson/usr/lib/python3.* $(pwd)/debian/meson/usr/lib/python3
+make[1]: Leaving directory '/dev/shm/all/meson/meson-0.49.0'
+   dh_installdocs -O--buildsystem=pybuild
+   dh_installchangelogs -O--buildsystem=pybuild
+   dh_installexamples -O--buildsystem=pybuild
+   dh_installman -O--buildsystem=pybuild
+   dh_installcatalogs -O--buildsystem=pybuild
+   dh_installcron -O--buildsystem=pybuild
+   dh_installdebconf -O--buildsystem=pybuild
+   dh_installemacsen -O--buildsystem=pybuild
+   dh_installifupdown -O--buildsystem=pybuild
+   dh_installinfo -O--buildsystem=pybuild
+   dh_python3 -O--buildsystem=pybuild
+E: dh_python3 dh_python3:176: no package to act on (python3-foo or one with ${python3:Depends} in Depends)
+   dh_installinit -O--buildsystem=pybuild
+   dh_installsystemd -O--buildsystem=pybuild
+   dh_installmenu -O--buildsystem=pybuild
+   dh_installmime -O--buildsystem=pybuild
+   dh_installmodules -O--buildsystem=pybuild
+   dh_installlogcheck -O--buildsystem=pybuild
+   dh_installlogrotate -O--buildsystem=pybuild
+   dh_installpam -O--buildsystem=pybuild
+   dh_installppp -O--buildsystem=pybuild
+   dh_installudev -O--buildsystem=pybuild
+   dh_installgsettings -O--buildsystem=pybuild
+   dh_bugfiles -O--buildsystem=pybuild
+   dh_ucf -O--buildsystem=pybuild
+   dh_lintian -O--buildsystem=pybuild
+   dh_gconf -O--buildsystem=pybuild
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O--buildsystem=pybuild
+   dh_perl -O--buildsystem=pybuild
+   dh_usrlocal -O--buildsystem=pybuild
+   dh_link -O--buildsystem=pybuild
+   dh_installwm -O--buildsystem=pybuild
+   dh_installxfonts -O--buildsystem=pybuild
+   dh_strip_nondeterminism -O--buildsystem=pybuild
+   dh_compress -O--buildsystem=pybuild
+   dh_fixperms -O--buildsystem=pybuild
+   dh_missing -O--buildsystem=pybuild
+   dh_installdeb -O--buildsystem=pybuild
+   dh_gencontrol -O--buildsystem=pybuild
+dpkg-gencontrol: warning: Depends field of package meson: substitution variable ${shlibs:Depends} used, but is not defined
+   dh_md5sums -O--buildsystem=pybuild
+   dh_builddeb -O--buildsystem=pybuild
+dpkg-deb: building package 'meson' in '../meson_0.49.0-1_all.deb'.
+FAKEROOTKEY=1823625929 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../meson_0.49.0-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian meson_0.49.0-1_amd64.changes ...
+Finished running lintian.
